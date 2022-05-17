@@ -12,6 +12,7 @@ def webhook():
        #print("Data received from Webhook is: ", request.json)
 	with open('webhook.json', 'w') as f:
     		f.write(request.json)
+		f.close()
         return "Webhook received!"
 
 

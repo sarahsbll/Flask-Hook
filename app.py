@@ -10,8 +10,8 @@ def index():
 @app.route('/webhook', methods=['POST'])
 def webhook():
 	if request.method == 'POST':
-       		print("Data received from Webhook is: ", request.json)
-        	print("Hello")
+       		jf = open('webhook.json', 'w')
+		json.dump(request.json, jf)
 	
 	return "Webhook received!"
 

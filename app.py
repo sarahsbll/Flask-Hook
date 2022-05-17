@@ -10,7 +10,7 @@ def index():
 @app.route('/webhook', methods=['POST'])
 def webhook():
 	if request.method == 'POST':
-		with open('webhook.json', 'w') as jf:
+		with open('/Users/highsierra/Tech/Labortory/DEV/Flask-Hook/webhook.json', 'w') as jf:
 			json.dump(request.json, jf)
 	
 	return "Webhook received!"

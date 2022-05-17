@@ -11,9 +11,8 @@ def index():
 def webhook():
     if request.method == 'POST':
        #print("Data received from Webhook is: ", request.json)
-	with open('webhook.json', 'w') as jf:
-    		json.dump(request.json, jf)
-	
+	jf = open('webhook1.json', 'w')
+	json.dump(request.json, js)
         return "Webhook received!"
 
 

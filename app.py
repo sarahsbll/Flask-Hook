@@ -1,5 +1,4 @@
 from flask import Flask, request
-import json
 
 app = Flask(__name__)
 
@@ -10,9 +9,7 @@ def index():
 @app.route('/webhook', methods=['POST'])
 def webhook():
 	if request.method == 'POST':
-		print("Data received from Webhook is: ", request.json)
-		json_object = json.dumps(request.get_json(), indent = 4)
-		with open("webhooked.json", "w") as outfile:
-			outfile.write(json_object)
+		with open("sample.txt", "w") as outfile:
+			outfile.write("test")
 			outfile.close()
 		return "Webhook received!"

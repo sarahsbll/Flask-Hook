@@ -44,8 +44,8 @@ app.run(host='0.0.0.0', port=8000)
 dbx.files_upload(bytes(str(li)[1:-1], 'UTF-8'), '/Python/sample8.json')
 
 #with open("test3.json", "w") as f:
-	f.write(str(li))
-	f.close()
+	#f.write(str(li))
+	#f.close()
 
 
 

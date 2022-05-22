@@ -40,7 +40,7 @@ def webhook():
 
 
 
-dbx.files_upload(bytes(str(li)[1:-1], 'UTF-8'), '/Python/sample8.json')
+dbx.files_upload(bytes(str(li)[1:-1], 'UTF-8'), '/Python/sample8.text')
 
 #with open("test3.json", "w") as f:
 	#f.write(str(li))

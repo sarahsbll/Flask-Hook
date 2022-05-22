@@ -12,6 +12,6 @@ def webhook():
 	if request.method == 'POST':
 		print("Data received from Webhook is: ", request.json)
 		with open("webhooked.json", "a") as outfile:
-			outfile.write(json_object)
+			outfile.write(request.get_json())
 			outfile.close()
 		return "Webhook received!"

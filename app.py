@@ -6,11 +6,8 @@ import dropbox
 dbx = dropbox.Dropbox('sl.BIHXQMOID8C4j__clI2sqjyTAMYuAQZcHQKHdpZ3t41eHqsbQn4bjE2tPq68X3f7K0fgL-vaLx6iCqJNqvudHl9S3W6C3BMRujZAPhuBs6keEmtujAGFuSRPPPCIrH3_O2E8OEwLXRzK')
 
 
-str_1 = "Join our freelance network"
 
-str_1_encoded = bytes(str_1,'UTF-8')
 
-dbx.files_upload(str_1_encoded, '/Python/test5.txt')
 
 
 
@@ -24,4 +21,10 @@ def index():
 @app.route('/webhook', methods=['POST'])
 def webhook():
 	if request.method == 'POST':
+		str_1 = "Join our freelance network"
+
+		str_1_encoded = bytes(str_1,'UTF-8')
+
+		dbx.files_upload(str_1_encoded, '/Python/test6.txt')
+
 		return "Webhook received!"

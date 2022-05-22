@@ -9,7 +9,7 @@ def index():
 @app.route('/webhook', methods=['POST'])
 def webhook():
 	if request.method == 'POST':
-		with open("sample.txt", "w") as outfile:
+		with open("test.txt", "w") as outfile:
 			outfile.write("test")
 			outfile.close()
 		return "Webhook received!"

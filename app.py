@@ -24,15 +24,12 @@ def webhook():
 		#print("Data received from Webhook is: ", request.json)
 		li.append(request.get_json())
 		#print(li)
+		dbx.files_upload(bytes(str(li), 'UTF-8'), '/Python/sample9.json')
 
 		return "Webhook received!"
 
 
 
-
-
-
-dbx.files_upload(bytes(str(li), 'UTF-8'), '/Python/sample9.json')
 
 #with open("test3.json", "w") as f:
 	#f.write(str(li))

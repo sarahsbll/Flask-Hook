@@ -11,10 +11,6 @@ def index():
 def webhook():
     if request.method == 'POST':
         print("Data received from Webhook is: ", request.json)
-		# Serializing json 
-        json_object = json.dumps(request.get_json(), indent = 4)
-        # Writing to sample.json 
-        with open("webhooked.json", "a") as outfile:
-            outfile.write(json_object)
-            outfile.close()
+		with open("webhooked.json", "a") as outfile:
+        	json.dump(request.get_json(), outfile)
         return "Webhook received!"

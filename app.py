@@ -3,14 +3,7 @@ import dropbox
 import json
 
 # using an access token
-#dbx = dropbox.Dropbox('sl.BIHXQMOID8C4j__clI2sqjyTAMYuAQZcHQKHdpZ3t41eHqsbQn4bjE2tPq68X3f7K0fgL-vaLx6iCqJNqvudHl9S3W6C3BMRujZAPhuBs6keEmtujAGFuSRPPPCIrH3_O2E8OEwLXRzK')
 dbx = dropbox.Dropbox('sl.BKTIgucHvPwW2PFw5C0w69AgcPtsX-F1W18iEZaMTUK48CGfXDI3iZzpgN-uqDrgwUx56oQO1mqqQevzvkH6HtY827GlN86y2ZB_-mE8oXW9oUSc2DonjcHwzDC9gXu742vfoF5DIkfL')
-
-
-#diction = {}
-
-li = []
-
 
 app = Flask(__name__)
 @app.route("/")
@@ -24,15 +17,10 @@ def webhook():
 		#print("Data received from Webhook is: ", request.json)
 		li.append(request.get_json())
 		#print(li)
-		dbx.files_upload(bytes(str(li), 'UTF-8'), '/Python/sample11.json')
+		dbx.files_upload(bytes(str(li), 'UTF-8'), '/Python/sample.json')
 
 		return "Webhook received!"
 
-
-
-#with open("test3.json", "w") as f:
-	#f.write(str(li))
-	#f.close()
 
 
 

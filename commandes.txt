@@ -1,0 +1,56 @@
+# Commands
+mkdir Flask-Hook
+python -m venv flaskHOOK
+source flaskHOOK/bin/activate
+
+python -m pip install Flask
+python -m pip freeze > requirements.txt
+
+git init
+
+echo flaskHOOK > .gitignore
+echo __pycache__ >> .gitignore
+
+git add .gitignore app.py requirements.txt
+
+git commit -m "Initial commit"
+
+heroku login
+
+echo "web: gunicorn app:app" > Procfile
+
+python -m pip install gunicorn
+python -m pip freeze > requirements.txt
+
+
+git add Procfile requirements.txt
+git commit -m "Added Heroku deployment files"
+
+heroku create flask-hook
+
+git push heroku master
+
+
+
+
+
+#To make changes
+vim app.py
+
+git add app.py
+
+git commit -m "Made changes"
+
+git push heroku master
+
+
+#In case of installing a new packahe
+python -m pip install dropbox
+python -m pip freeze > requirements.txt
+git add .
+git commit -m "Install package"
+git push heroku master
+
+#To debug
+heroku log --tail
+python app.py #python tends to give more descriptive error messages
